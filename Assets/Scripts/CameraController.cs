@@ -22,6 +22,5 @@ public class CameraController : MonoBehaviour
         orientation.forward = dirToCombatLookAt.normalized;
 
         playerObj.forward = dirToCombatLookAt.normalized;
-
     }
 }

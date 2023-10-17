@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DeathTag
   - FinishTag
+  - Trampoline
   layers:
   - Default
   - TransparentFX

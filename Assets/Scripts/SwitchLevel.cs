@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchLevel : MonoBehaviour
 {
 
-    [SerializeField] int levelsNumber;
+    private int levelsNumber = 5;
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
