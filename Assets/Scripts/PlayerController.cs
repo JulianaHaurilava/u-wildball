@@ -32,12 +32,33 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    private Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         rb.freezeRotation = true;
 
         readyToJump = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            animator.SetTrigger("TouchedGround");
+            Invoke(nameof(ResetJump), jumpCooldown);
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            grounded = false;
+        }
     }
 
     private void Update()
@@ -47,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
         MyInput();
         SpeedControl();
+
+        
 
         // handle drag
         if (grounded)
@@ -71,8 +94,6 @@ public class PlayerController : MonoBehaviour
             readyToJump = false;
 
             Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 

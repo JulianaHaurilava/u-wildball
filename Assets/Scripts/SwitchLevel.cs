@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SwitchLevel : MonoBehaviour
 {
 
-    private int levelsNumber = 5;
+    private int levelsNumber = 3;
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
@@ -20,7 +20,7 @@ public class SwitchLevel : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    SceneManager.LoadScene(0);
                 }
 
                 break;
