@@ -14,7 +14,7 @@ public class SwitchLevel : MonoBehaviour
                 break;
 
             case "FinishTag":
-                if (SceneManager.GetActiveScene().buildIndex < levelsNumber - 1)
+                if (SceneManager.GetActiveScene().buildIndex < levelsNumber)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }

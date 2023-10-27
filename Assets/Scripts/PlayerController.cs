@@ -32,12 +32,12 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
-    private Animator animator;
+    //private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         rb.freezeRotation = true;
 
         readyToJump = true;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            animator.SetTrigger("TouchedGround");
+            //animator.SetTrigger("TouchedGround");
             Invoke(nameof(ResetJump), jumpCooldown);
             grounded = true;
         }

@@ -928,7 +928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e8dd0bd9456864289bb905a54a9b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsNumber: 0
 --- !u!135 &545410927
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1530,7 +1529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248972099}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1371432, y: 0.000000014760366, z: -0.0000000020435929, w: 0.9905513}
+  m_LocalRotation: {x: 0.1371432, y: -0.000000014760366, z: 0.0000000020435929, w: 0.9905513}
   m_LocalPosition: {x: -15.24, y: 1.077, z: -28.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2079,7 +2078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753804332}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13714316, y: 0.000000014760365, z: -0.0000000020435926, w: 0.99055123}
+  m_LocalRotation: {x: 0.13714316, y: -0.000000014760365, z: 0.0000000020435926, w: 0.99055123}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2758,6 +2757,14 @@ PrefabInstance:
     - target: {fileID: 4777011260459918036, guid: e8ee3498c2268ab4d9c4f64e673419dc, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777011260459918036, guid: e8ee3498c2268ab4d9c4f64e673419dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804340347404819708, guid: e8ee3498c2268ab4d9c4f64e673419dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5730023769983671186, guid: e8ee3498c2268ab4d9c4f64e673419dc, type: 3}
       propertyPath: m_text
