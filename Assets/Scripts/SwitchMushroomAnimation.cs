@@ -1,32 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchMushroomAnimation : MonoBehaviour
 {
-    [SerializeField] List<Animation> animations;
-    [SerializeField] Animator animator;
-    void Start()
-    {
-        animator.
-    }
+    [SerializeField] List<AnimationClip> animations;
+    [SerializeField] Animator anim;
 
-    // Update is called once per frame
-    void Update()
+    private void StartRandomAnimation()
     {
-        if (animator.tri)
-        {
-
-        }
-    }
-
-    public void SetTrigger()
-    {
-        animator.SetTrigger("AnimEnded");
-    }
-
-    public void SwitchAnimation()
-    {
-        animator.anima
+        anim.Play(animations[Random.Range(0, animations.Count)].name);
     }
 }
