@@ -884,12 +884,11 @@ MonoBehaviour:
   moveSpeed: 4
   groundDrag: 4
   jumpForce: 6.5
-  jumpCooldown: 0.25
-  airMultiplier: 0.3
+  jumpCooldown: 0.5
+  airMultiplier: 0.2
   walkSpeed: 0
   sprintSpeed: 0
   jumpKey: 32
-  playerHeight: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
