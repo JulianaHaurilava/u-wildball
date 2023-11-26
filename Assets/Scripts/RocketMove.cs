@@ -21,8 +21,8 @@ public class RocketMove : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent(out Rigidbody rb))
             {
-                Thread.Sleep(3000);
-                player.SetParent(transform);
+                Thread.Sleep(2000);
+                player.SetParent(transform, true);
                 anim.SetTrigger("Seats");
             }
         }
