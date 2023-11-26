@@ -5,26 +5,20 @@ public class UpPlatforms : MonoBehaviour
 {
     [SerializeField]
     private Animator[] platformAnimators = new Animator[3];
-    [SerializeField]
-    private int upCooldown;
 
     private bool activated = false;
-    private int nextPlatform = 0;
 
-    private void OnCollisionEnter(Collision collision)
+    public void ActivatePlatforms()
     {
-        if (collision.gameObject.tag == "Player")
+        activated = !activated;
+        for (int i = 0; i < platformAnimators.Length; i++)
         {
-            activated = !activated;
-            for (int i = 0; i < platformAnimators.Length; i++)
-            {
-                Invoke(nameof(UpPlatform), upCooldown);
-            }
-            nextPlatform = 0;
+            UpPlatform(i);
         }
     }
-    private void UpPlatform()
+
+    private void UpPlatform(int platformNum)
     {
-        platformAnimators[nextPlatform++].SetBool("PlatformActivated", activated);
+        platformAnimators[platformNum].SetBool("PlatformActivated", activated);
     }
 }

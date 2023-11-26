@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
 
         input = new Vector3(horizontal, 0, vertical).normalized;
 
-        if (Input.GetKey(jumpKey))
+        if (Input.GetKeyDown(jumpKey))
         {
             playerMovement.Jump();
         }

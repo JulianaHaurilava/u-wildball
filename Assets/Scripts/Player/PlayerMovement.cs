@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float jumpCooldown;
     [SerializeField] float airMultiplier;
-    private bool readyToJump;
 
     [Header("Ground Check")]
     [SerializeField] LayerMask whatIsGround;
@@ -25,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        readyToJump = true;
     }
     private void Update()
     {
@@ -36,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            Invoke(nameof(ResetJump), jumpCooldown);
             grounded = true;
         }
     }
@@ -76,15 +73,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (readyToJump && grounded)
+        if (grounded)
         {
-            readyToJump = false;
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
-    }
-    private void ResetJump()
-    {
-        readyToJump = true;
     }
 }
