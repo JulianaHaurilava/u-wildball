@@ -13,17 +13,18 @@ public class UpPlatforms : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" && !activated)
+        if (collision.gameObject.tag == "Player")
         {
-            activated = true;
+            activated = !activated;
             for (int i = 0; i < platformAnimators.Length; i++)
             {
                 Invoke(nameof(UpPlatform), upCooldown);
             }
+            nextPlatform = 0;
         }
     }
     private void UpPlatform()
     {
-        platformAnimators[nextPlatform++].SetTrigger("UpPlatform");
+        platformAnimators[nextPlatform++].SetBool("PlatformActivated", activated);
     }
 }
