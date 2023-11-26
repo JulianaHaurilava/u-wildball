@@ -6,7 +6,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform orientation;
     [SerializeField] Transform player;
     [SerializeField] Transform playerObj;
-    [SerializeField] Rigidbody rb;
 
     [SerializeField] float rotationSpeed;
     [SerializeField] Transform combatLookAt;
