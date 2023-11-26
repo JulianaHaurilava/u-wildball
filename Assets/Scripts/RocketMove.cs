@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class RocketMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Transform player;
+
     private Animator anim;
 
     private void Start()
@@ -20,8 +22,14 @@ public class RocketMove : MonoBehaviour
             if (other.gameObject.TryGetComponent(out Rigidbody rb))
             {
                 Thread.Sleep(3000);
+                player.SetParent(transform);
                 anim.SetTrigger("Seats");
             }
         }
+    }
+
+    public void FreePlayer()
+    {
+        player.SetParent(null);
     }
 }
