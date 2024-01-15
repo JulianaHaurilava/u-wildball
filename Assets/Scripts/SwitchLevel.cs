@@ -3,14 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class SwitchLevel : MonoBehaviour
 {
-
+    private Death deathController;
     private int levelsNumber = 3;
+
+    private void Start()
+    {
+        deathController = GetComponent<Death>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
         {
             case "DeathTag":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                deathController.ActivateDestroy();
+                Invoke("ReloadCurrentScene", 1.5f);
                 break;
 
             case "FinishTag":
@@ -28,5 +35,10 @@ public class SwitchLevel : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void ReloadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
