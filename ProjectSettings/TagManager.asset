@@ -8,6 +8,7 @@ TagManager:
   - FinishTag
   - Trampoline
   - UpPlatformsButton
+  - Bonus
   layers:
   - Default
   - TransparentFX

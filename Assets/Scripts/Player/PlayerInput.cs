@@ -6,6 +6,8 @@ public class PlayerInput : MonoBehaviour
     private const string HORIZONTAL_AXIS = "Horizontal";
     private const string VERTICAL_AXIS = "Vertical";
 
+    public bool HasInput { get; set; } = true;
+
     private Vector3 input;
 
     private PlayerMovement playerMovement;
@@ -20,14 +22,17 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw(HORIZONTAL_AXIS);
-        float vertical = Input.GetAxisRaw(VERTICAL_AXIS);
-
-        input = new Vector3(horizontal, 0, vertical).normalized;
-
-        if (Input.GetKeyDown(jumpKey))
+        if (HasInput)
         {
-            playerMovement.Jump();
+            float horizontal = Input.GetAxisRaw(HORIZONTAL_AXIS);
+            float vertical = Input.GetAxisRaw(VERTICAL_AXIS);
+
+            input = new Vector3(horizontal, 0, vertical).normalized;
+
+            if (Input.GetKeyDown(jumpKey))
+            {
+                playerMovement.Jump();
+            }
         }
     }
     private void FixedUpdate()

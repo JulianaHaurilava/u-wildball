@@ -68,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void StopPlayer()
+    {
+        rb.velocity = Vector3.zero;
+        rb.useGravity = false;
+    }
+
     public void Jump()
     {
         if (grounded)
