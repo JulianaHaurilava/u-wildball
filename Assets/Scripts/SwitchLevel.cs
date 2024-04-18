@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SwitchLevel : MonoBehaviour
 {
     private Death deathController;
-    private int levelsNumber = 3;
+    private int levelsNumber = 4;
 
     private void Start()
     {
@@ -29,7 +29,6 @@ public class SwitchLevel : MonoBehaviour
                 {
                     SceneManager.LoadScene(0);
                 }
-
                 break;
 
             default:
